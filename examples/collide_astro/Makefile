@@ -1,5 +1,5 @@
 OPTS=-O
-CHARM_PATH=../charm
+CHARM_PATH=../../../charm
 CHARMC=$(CHARM_PATH)/bin/charmc $(OPTS)
 
 OBJS = main.o
