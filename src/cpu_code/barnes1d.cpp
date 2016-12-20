@@ -1,4 +1,4 @@
-#include "barnes1d.h"
+#include "barnes1d_cputree.h"
 
 int main(int argc, char *argv[]){
 
@@ -17,11 +17,12 @@ int main(int argc, char *argv[]){
 	DEBUG(cout<<"*********TRAVERSING TREE*********\n";)
 	DEBUG(t.printSubTree(treeRoot);)
 
-
+	DEBUG(cout<<"*********COMPUTING GRAVITY*********\n";)
 	//Iterate over all leaves and compute their gravity and print accelerations
 	for(int i=0;i<t.size;i++){
-		if(t.node[i].isLeaf){
-			BarnesConsumer<typeof(t)> c(t.node[i]);
+		//check if the node is a leaf
+		if(i>=pow(2,depth)){
+			BarnesConsumer<typeof(t),BarnesKey> c(t, t.node[i]);
 			t.requestNode(treeRoot, c);
 			cout<<"Particle "<<i<<" has an acceleration of "<<c.acc<<endl;
 		}
