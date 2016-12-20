@@ -6,7 +6,7 @@
 #include <vector>
 #include <cuda.h>
 
-#include "barnes1d.h"
+#include "barnes1d_cudatree.h"
 
 __global__ void tryTraverse(const BarnesNodeData *treeNodes,int firstLeaf,int nTreeNodes,float *acc) {
 	int i=threadIdx.x+blockIdx.x*blockDim.x;
@@ -18,7 +18,7 @@ __global__ void tryTraverse(const BarnesNodeData *treeNodes,int firstLeaf,int nT
 		ManualStackTree<BarnesKey,typeof(untertree)> tree(untertree);
 #endif
 		BarnesKey treeRoot=1;
-		BarnesConsumer<typeof(tree)> c(tree,treeNodes[i]);
+		BarnesConsumer<typeof(tree),BarnesKey> c(tree,treeNodes[i]);
 		
 		// Expand the tree root into the consumer
 		tree.requestNode(treeRoot,c);
