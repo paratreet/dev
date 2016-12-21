@@ -8,6 +8,14 @@
 #include "paratreet.h"
 
 
+typedef unsigned long BarnesKey;
+
+template <class ParaTree>
+BarnesKey leftChild(ParaTree &t,BarnesKey parent) { return parent*2+0; }
+template <class ParaTree>
+BarnesKey rightChild(ParaTree &t,BarnesKey parent) { return parent*2+1; }
+
+
 /**
  A Barnes-Hut leaf: a particle (or list of particles).
 */
@@ -15,6 +23,15 @@ class BarnesLeafData {
 public:
 	float mass;
 	float x;
+
+#ifdef __CHARMC__
+  void pup(PUP::er &p) {
+    p|mass;
+    p|x;
+  }
+#endif
+
+  CUDA_BOTH BarnesLeafData() {}
 	
 	CUDA_BOTH BarnesLeafData(float mass,float x) :mass(mass), x(x) {}
 }; 
@@ -28,10 +45,19 @@ class BarnesNodeData
 {
 public:
 	float xMin, xMax; // range of size
+
+#ifdef __CHARMC__
+  void pup(PUP::er &p) {
+    BarnesLeafData::pup(p);
+    p|xMin;
+    p|xMax;
+  }
+#endif
+
+  CUDA_BOTH BarnesNodeData() {}
 	
 	CUDA_BOTH BarnesNodeData(float mass,float x,float xMin,float xMax) :BarnesLeafData(mass,x), xMin(xMin), xMax(xMax) {}
 };
-
 
 /**
  A Barnes-Hut tree data consumer: computes gravity on nodes and leaves of the tree.

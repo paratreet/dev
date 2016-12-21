@@ -1,0 +1,17 @@
+mainmodule barnes {
+  readonly CProxy_Main mainProxy;
+  readonly CProxy_BarnesTreePiece tpProxy;
+
+  mainchare Main {
+    entry Main(CkArgMsg *m);
+    entry [reductiontarget] void done();
+  }
+
+  array [1D] BarnesTreePiece {
+    entry BarnesTreePiece(BarnesNodeData, BarnesKey, BarnesKey);
+    entry void startWork();
+    entry void consumeRemoteNode(const BarnesNodeData &n, const BarnesKey &key);
+    entry void consumeRemoteLeaf(const BarnesLeafData &n, const BarnesKey &key);
+    entry void requestRemoteNode(BarnesKey, int);
+  }
+};
