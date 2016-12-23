@@ -7,11 +7,19 @@ mainmodule barnes {
     entry [reductiontarget] void done();
   }
 
+  /**
+  Chare array representing tree pieces.
+  Each tree piece has one unique tree node.
+  */ 
   array [1D] BarnesTreePiece {
     entry BarnesTreePiece(BarnesNodeData, BarnesKey, BarnesKey);
     entry void startWork();
+    /// Response to a consumer requesting a remote tree node
     entry void consumeRemoteNode(const BarnesNodeData &n, const BarnesKey &key);
+    /// Response to a consumer requesting a remote tree leaf
     entry void consumeRemoteLeaf(const BarnesLeafData &n, const BarnesKey &key);
+    /// Request appropriate tree piece for a remote node or leaf
+    /// Invoked by consumer in a tree piece
     entry void requestRemoteNode(BarnesKey, int);
   }
 };

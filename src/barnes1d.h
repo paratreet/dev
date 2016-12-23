@@ -1,4 +1,4 @@
-/* 
+/** 
  1D barnes-hut data structures and consumer example.
  
 */
@@ -7,11 +7,15 @@
 
 #include "paratreet.h"
 
-
+/**
+Barnes-Hut key for tree nodes.
+*/
 typedef unsigned long BarnesKey;
 
+/// Get key of left child of parent nodes
 template <class ParaTree>
 BarnesKey leftChild(ParaTree &t,BarnesKey parent) { return parent*2+0; }
+/// Get key of right child of parent node
 template <class ParaTree>
 BarnesKey rightChild(ParaTree &t,BarnesKey parent) { return parent*2+1; }
 
@@ -24,6 +28,7 @@ public:
 	float mass;
 	float x;
 
+/// Packing-unpacking function needed for migrations in Charm++
 #ifdef __CHARMC__
   void pup(PUP::er &p) {
     p|mass;
@@ -46,6 +51,7 @@ class BarnesNodeData
 public:
 	float xMin, xMax; // range of size
 
+/// Packing-unpacking function needed for migrations in Charm++
 #ifdef __CHARMC__
   void pup(PUP::er &p) {
     BarnesLeafData::pup(p);
