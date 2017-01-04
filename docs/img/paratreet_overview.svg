@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="765"
+   height="990"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.48.4 r9939"
+   version="1.0"
+   sodipodi:docname="paratreet_overview.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;">
+      <path
+         id="path3815"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <filter
+       inkscape:collect="always"
+       id="filter3764">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.6858084"
+         id="feGaussianBlur3766" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="115.32715"
+     inkscape:cy="150.68621"
+     inkscape:document-units="in"
+     inkscape:current-layer="layer1"
+     width="765px"
+     height="990px"
+     gridanglex="0.33333333in"
+     gridanglez="0.33333333in"
+     grid_units="in"
+     inkscape:window-width="1503"
+     inkscape:window-height="848"
+     inkscape:window-x="90"
+     inkscape:window-y="24"
+     showgrid="false"
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <inkscape:grid
+       id="GridFromPre046Settings"
+       type="xygrid"
+       originx="0px"
+       originy="0px"
+       spacingx="0.011111111in"
+       spacingy="0.011111111in"
+       color="#3f3fff"
+       empcolor="#3f3fff"
+       opacity="0.15"
+       empopacity="0.38"
+       empspacing="5" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="color:#000000;fill:#2aa6ff;fill-opacity:1;stroke:none;stroke-width:0.44999999;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3764);enable-background:accumulate"
+       id="rect2982"
+       width="287.89346"
+       height="142.91283"
+       x="70.710678"
+       y="181.37289"
+       transform="matrix(1.2826315,0,0,0.75948396,-17.484924,39.258653)"
+       rx="14.033648"
+       ry="23.700302"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       y="35.405853"
+       x="70.710678"
+       height="142.91283"
+       width="287.89346"
+       id="rect3768"
+       style="color:#000000;fill:#ff2a30;fill-opacity:1;stroke:none;stroke-width:0.44999999;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3764);enable-background:accumulate"
+       transform="matrix(1.2826315,0,0,0.75948396,-17.484924,43.258653)"
+       rx="14.033648"
+       ry="23.700302"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="135.89671"
+       y="213.25362"
+       id="text3770"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3772"
+         x="135.89671"
+         y="213.25362"
+         style="font-size:14px;text-align:start;text-anchor:start">request</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="169.70563"
+       y="155.614"
+       id="text3774"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3776"
+         x="169.70563"
+         y="155.614" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:center;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:middle;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       x="266.25641"
+       y="157.57339"
+       id="text3778"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3780"
+         x="266.25641"
+         y="157.57339">consumeNode</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:center;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:middle;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       x="372.74631"
+       y="157.57339"
+       id="text3782"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3784"
+         x="372.74631"
+         y="157.57339">consumeLeaf</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       x="86.826706"
+       y="91.681839"
+       id="text3786"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3788"
+         x="86.826706"
+         y="91.681839"
+         style="font-weight:bold;text-align:start;text-anchor:start;-inkscape-font-specification:Arial Bold">generic Consumer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       x="86.471237"
+       y="269.42728"
+       id="text3790"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3792"
+         x="86.471237"
+         y="269.42728"
+         style="font-weight:bold;text-align:start;text-anchor:start;-inkscape-font-specification:Arial Bold">generic ParaTree</tspan></text>
+    <path
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 34.850263,209.15208 87.378187,0"
+       id="path3794"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4240"
+       d="m 220.71833,209.15208 c 26.26397,0 39.90102,-13.63705 40.4061,-41.41625"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       sodipodi:nodetypes="ccc"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 189.24371,209.15208 139.47462,0 c 26.26397,0 39.90102,-13.63705 40.4061,-41.41625"
+       id="path4242"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 261.4375,144.9375 c -0.50508,-27.7792 -14.14228,-41.40625 -40.40625,-41.40625 l -24.96875,0 c -26.26397,0 -39.90117,13.62705 -40.40625,41.40625 l 0,51.58768"
+       id="path4244"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_generic.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       ry="23.700302"
+       rx="14.033648"
+       transform="matrix(1.2826315,0,0,0.75948396,-17.484924,695.61914)"
+       y="181.37289"
+       x="70.710678"
+       height="142.91283"
+       width="287.89346"
+       id="rect4249"
+       style="color:#000000;fill:#2abcff;fill-opacity:1;stroke:none;stroke-width:0.44999999;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3764);enable-background:accumulate"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       ry="23.700302"
+       rx="14.033648"
+       transform="matrix(1.2826315,0,0,0.75948396,-17.484924,699.61914)"
+       style="color:#000000;fill:#ff2a30;fill-opacity:1;stroke:none;stroke-width:0.44999999;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3764);enable-background:accumulate"
+       id="rect4251"
+       width="287.89346"
+       height="142.91283"
+       x="70.710678"
+       y="35.405853"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4253"
+       y="869.61407"
+       x="135.89671"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         style="font-size:14px;text-align:start;text-anchor:start"
+         y="869.61407"
+         x="135.89671"
+         id="tspan4255"
+         sodipodi:role="line">request</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4257"
+       y="813.9339"
+       x="266.25641"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:center;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:middle;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         y="813.9339"
+         x="266.25641"
+         id="tspan4259"
+         sodipodi:role="line">consumeNode</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4261"
+       y="813.9339"
+       x="372.74631"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:center;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:middle;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         y="813.9339"
+         x="372.74631"
+         id="tspan4263"
+         sodipodi:role="line">consumeLeaf</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4265"
+       y="748.0423"
+       x="86.826706"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         style="font-weight:bold;text-align:start;text-anchor:start;-inkscape-font-specification:Arial Bold"
+         y="748.0423"
+         x="86.826706"
+         id="tspan4267"
+         sodipodi:role="line">generic Consumer</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4269"
+       y="925.78772"
+       x="86.471237"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         style="font-weight:bold;text-align:start;text-anchor:start;-inkscape-font-specification:Arial Bold"
+         y="925.78772"
+         x="86.471237"
+         id="tspan4271"
+         sodipodi:role="line">Charm++ ParaTree</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path4273"
+       d="m 34.850263,865.51257 87.378187,0"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       sodipodi:nodetypes="cc"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 220.71833,865.51257 c 26.26397,0 39.90102,-13.63705 40.4061,-41.41625"
+       id="path4275"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4277"
+       d="m 189.24371,865.51257 139.47462,0 c 26.26397,0 39.90102,-13.63705 40.4061,-41.41625"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path4279"
+       d="m 261.4375,801.29799 c -0.50508,-27.7792 -14.14228,-41.40625 -40.40625,-41.40625 l -24.96875,0 c -26.26397,0 -39.90117,13.62705 -40.40625,41.40625 l 0,51.58768"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4281"
+       d="m 421.75621,908.33562 c -26.26397,0 -39.90102,-13.63705 -40.4061,-41.41625 l 0,-42.82208"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       sodipodi:nodetypes="cccc"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 474.28414,908.34595 -160.52793,0 c -26.26397,0 -39.90102,-13.63705 -40.4061,-41.41625 l 0,-42.83241"
+       id="path4283"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 227.7894,865.51257 243.95183,0"
+       id="path4285"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="493.82187"
+       y="924.59106"
+       id="text4287"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4289"
+         x="493.82187"
+         y="924.59106"
+         style="font-size:14px;text-align:end;text-anchor:end">consumeRemote</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4291"
+       y="881.89978"
+       x="493.82187"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         style="font-size:14px;text-align:end;text-anchor:end"
+         y="881.89978"
+         x="493.82187"
+         id="tspan4293"
+         sodipodi:role="line">requestRemote</tspan></text>
+    <rect
+       ry="23.700302"
+       rx="14.033648"
+       transform="matrix(1.2826315,0,0,0.75948396,-17.484924,313.97954)"
+       y="181.37289"
+       x="70.710678"
+       height="142.91283"
+       width="287.89346"
+       id="rect4295"
+       style="color:#000000;fill:#2af9ff;fill-opacity:1;stroke:none;stroke-width:0.44999999000000002;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3764);enable-background:accumulate"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       ry="23.700302"
+       rx="14.033648"
+       transform="matrix(1.2826315,0,0,0.75948396,-17.484924,319.97954)"
+       style="color:#000000;fill:#ff2a30;fill-opacity:1;stroke:none;stroke-width:0.44999999;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3764);enable-background:accumulate"
+       id="rect4297"
+       width="287.89346"
+       height="142.91283"
+       x="70.710678"
+       y="35.405853"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4299"
+       y="489.97449"
+       x="135.89671"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         style="font-size:14px;text-align:start;text-anchor:start"
+         y="489.97449"
+         x="135.89671"
+         id="tspan4301"
+         sodipodi:role="line">request</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4303"
+       y="434.29428"
+       x="266.25641"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:center;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:middle;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         y="434.29428"
+         x="266.25641"
+         id="tspan4305"
+         sodipodi:role="line">consumeNode</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4307"
+       y="434.29428"
+       x="372.74631"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:center;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:middle;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         y="434.29428"
+         x="372.74631"
+         id="tspan4309"
+         sodipodi:role="line">consumeLeaf</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4311"
+       y="368.40271"
+       x="86.826706"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         style="font-weight:bold;text-align:start;text-anchor:start;-inkscape-font-specification:Arial Bold"
+         y="368.40271"
+         x="86.826706"
+         id="tspan4313"
+         sodipodi:role="line">generic Consumer</tspan></text>
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path4325"
+       d="m 261.4375,421.65839 c -0.50508,-27.7792 -14.14228,-41.40625 -40.40625,-41.40625 l -24.96875,0 c -26.26397,0 -39.90117,13.62705 -40.40625,41.40625 l 0,51.58768"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="color:#000000;fill:#2aa6ff;fill-opacity:1;stroke:none;stroke-width:0.44999999;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3764);enable-background:accumulate"
+       id="rect4327"
+       width="287.89346"
+       height="142.91283"
+       x="70.710678"
+       y="181.37289"
+       transform="matrix(1.2826315,0,0,0.75948396,-17.484924,417.07601)"
+       rx="14.033648"
+       ry="23.700302"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="135.89671"
+       y="587.07098"
+       id="text4329"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4331"
+         x="135.89671"
+         y="587.07098"
+         style="font-size:14px;text-align:start;text-anchor:start">request</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:125%;letter-spacing:0px;word-spacing:0px;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Arial;-inkscape-font-specification:Arial"
+       x="86.471237"
+       y="647.24463"
+       id="text4333"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan4335"
+         x="86.471237"
+         y="647.24463"
+         style="font-weight:bold;text-align:start;text-anchor:start;-inkscape-font-specification:Arial Bold">underlying ParaTree</tspan></text>
+    <path
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 34.850263,582.96944 87.378187,0"
+       id="path4337"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       sodipodi:nodetypes="ccc"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 220.71833,582.96945 c 26.26397,0 39.90102,-13.63705 40.4061,-41.41625 l 0,-97.03557"
+       id="path4321"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4323"
+       d="m 189.24371,582.96945 139.47462,0 c 26.26397,0 39.90102,-13.63705 40.4061,-41.41625 l 0,-98.06604"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.44999999;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
+       d="m 136.15625,495.87691 -0.0312,0.0476 -0.0312,0.0238 -0.0312,0.0714 0,0.0238 0,40.00854 0,0.0238 0,0.0238 0.0312,0.0476 0.0312,0.0238 0.0312,0.0238 0.0937,0.0238 0.0312,0 77.28125,0 0.0312,0 0.0312,0 0.0625,-0.0238 0.0312,-0.0238 0.0312,-0.0238 0.0312,-0.0714 0,-0.0238 0,-40.00854 0,-0.0238 0,-0.0238 -0.0312,-0.0476 -0.0312,-0.0238 -0.0312,-0.0238 -0.0625,-0.0238 -0.0312,0 -0.0312,0 -77.28125,0 -0.0312,0 -0.0312,0 -0.0312,0 z m 0.34375,0.3332 76.84375,0 0,7.33054 -76.84375,0 z m 0,7.66375 76.84375,0 0,7.68754 -76.84375,0 z m 0,8.02074 76.84375,0 0,8.30636 -76.84375,0 z m 0,8.63956 76.84375,0 0,7.68755 -76.84375,0 z m 0,8.02075 76.84375,0 0,7.33054 -76.84375,0 z"
+       id="rect4339"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4345"
+       d="m 155.87697,539.94808 0,31.22381"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_queue.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="opacity:0.55967078;color:#000000;fill:none;stroke:#000000;stroke-width:4.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;marker-end:url(#Arrow1Send);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 484.36815,865.48873 8.61872,0 c 12.80287,0.23277 19.0833,6.51789 19.0833,18.6224 l 0,5.05528 c 0,12.10453 -6.28043,18.38962 -19.0833,18.6224 l -8.69994,0"
+       id="path4364"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/me/olawlor/research/paratreet/dev/docs/img/paratreet_remote.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+  </g>
+</svg>
