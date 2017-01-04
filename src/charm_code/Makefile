@@ -1,5 +1,7 @@
 SRC_FILES=barnes1d.cpp
-BUILD_OPTS = -c -std=c++11 -g
+OPTS=-O3 -g
+INC=-I..
+BUILD_OPTS = -c -std=c++11 $(OPTS) $(INC)
 CHARM_OPTS =
 TEST_OPTS = ++local
 CHARMC = $(CHARM_HOME)/bin/charmc $(CHARM_OPTS)

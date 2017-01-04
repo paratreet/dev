@@ -14,10 +14,10 @@ typedef unsigned long BarnesKey;
 
 /// Get key of left child of parent nodes
 template <class ParaTree>
-BarnesKey leftChild(ParaTree &t,BarnesKey parent) { return parent*2+0; }
+CUDA_BOTH BarnesKey leftChild(ParaTree &t,BarnesKey parent) { return parent*2+0; }
 /// Get key of right child of parent node
 template <class ParaTree>
-BarnesKey rightChild(ParaTree &t,BarnesKey parent) { return parent*2+1; }
+CUDA_BOTH BarnesKey rightChild(ParaTree &t,BarnesKey parent) { return parent*2+1; }
 
 
 /**
@@ -25,8 +25,8 @@ BarnesKey rightChild(ParaTree &t,BarnesKey parent) { return parent*2+1; }
 */
 class BarnesLeafData {
 public:
-	float mass;
-	float x;
+  float mass;
+  float x;
 
 /// Packing-unpacking function needed for migrations in Charm++
 #ifdef __CHARMC__
@@ -38,7 +38,7 @@ public:
 
   CUDA_BOTH BarnesLeafData() {}
 	
-	CUDA_BOTH BarnesLeafData(float mass,float x) :mass(mass), x(x) {}
+  CUDA_BOTH BarnesLeafData(float mass,float x) :mass(mass), x(x) {}
 }; 
 
 
@@ -49,7 +49,7 @@ class BarnesNodeData
 	: public BarnesLeafData // lumped mass and average position
 {
 public:
-	float xMin, xMax; // range of size
+  float xMin, xMax; // range of size
 
 /// Packing-unpacking function needed for migrations in Charm++
 #ifdef __CHARMC__
@@ -61,8 +61,8 @@ public:
 #endif
 
   CUDA_BOTH BarnesNodeData() {}
-	
-	CUDA_BOTH BarnesNodeData(float mass,float x,float xMin,float xMax) :BarnesLeafData(mass,x), xMin(xMin), xMax(xMax) {}
+
+  CUDA_BOTH BarnesNodeData(float mass,float x,float xMin,float xMax) :BarnesLeafData(mass,x), xMin(xMin), xMax(xMax) {}
 };
 
 /**
@@ -92,8 +92,8 @@ public:
 		acc+=fm;
 	}
 	
-	/// Consume a local tree node: recursively opens the node if nearby, or lumps it if distant.
-	inline CUDA_BOTH void consumeLocalNode(const BarnesNodeData &n,const BarnesKey &key) { 
+	/// Consume a tree node: recursively opens the node if nearby, or lumps it if distant.
+	inline CUDA_BOTH void consumeNode(const BarnesNodeData &n,const BarnesKey &key) { 
 		float radius=n.xMax-n.x;
 		float distance=me.x-n.x;
 		float angularSize=radius/abs(distance);
@@ -101,16 +101,15 @@ public:
 		
 		if (angularSize>openingThreshold) { // open recursively
 			TRACE_BARNES(printf("Me = %.0f, opening node %d (angular %.2f)\n",me.x,key,angularSize));
-			tree.requestNode(leftChild(tree,key),*this);
-			tree.requestNode(rightChild(tree,key),*this);
+			tree.requestChildren(key,*this);
 		} else { // compute acceleration to lumped centroid
 			TRACE_BARNES(printf("Me = %.0f, lumping gravity from %.0f (angular %.2f)\n",me.x,n.x,angularSize));
 			addGravity(n);
 		}
 	}
 
-	/// Consume a local tree leaf: just computes gravity.
-	inline CUDA_BOTH void consumeLocalLeaf(const BarnesLeafData &l,const BarnesKey &key) { 
+	/// Consume a tree leaf: just computes gravity.
+	inline CUDA_BOTH void consumeLeaf(const BarnesLeafData &l,const BarnesKey &key) { 
 		TRACE_BARNES(printf("Me = %.0f, leaf gravity from %.0f\n",me.x,l.x));
 		addGravity(l);
 	}

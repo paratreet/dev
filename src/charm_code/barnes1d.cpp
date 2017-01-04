@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <cmath>
 using namespace std;
-#include "../../barnes1d.h"
+#include "../barnes1d.h"
 #include "barnes.decl.h"
 
 /// Define DEBUG(x) to x if you need to print out a lot of statements
@@ -55,7 +55,7 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
       DEBUG(CkPrintf("[%d]startWork()\n", thisIndex);)
       remoteCounter = 0;
       if (thisIndex >= firstLeaf)
-        requestNode(1, *cons);
+        requestKey(1, *cons);
       checkDone();
     }
 
@@ -63,21 +63,26 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
 
     /// Method called to request a node
     template <class Consumer>
-    void requestNode(BarnesKey bk, Consumer &c) {
-
+    void requestKey(const BarnesKey &bk, Consumer &c) {
       if (bk < 1 || bk >= treeSize)
         CkPrintf("BarnesParaTree: Requested INVALID tree node %d\n", (int)bk);
       else if (bk == thisIndex) {   //Local node
         if (bk >= firstLeaf)
-          c.consumeLocalLeaf(node, bk);  //Call consumer's leaf method
+          c.consumeLeaf(node, bk);  //Call consumer's leaf method
         else
-          c.consumeLocalNode(node, bk);  //Call consumer's node method
+          c.consumeNode(node, bk);  //Call consumer's node method
       }
       else { //Remote node
         remoteCounter++;
         //Send a remote node request
         thisProxy[bk].requestRemoteNode(bk, thisIndex);
       }
+    }
+
+    template <class Consumer>
+    void requestChildren(const BarnesKey &bk, Consumer &c) {
+      requestKey(leftChild(*this,bk),c);
+      requestKey(rightChild(*this,bk),c);
     }
 
     /// Entry method called to request for a remote node
@@ -91,14 +96,14 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
     /// Entry method called to respond to a remote node request which is an internal node
     void consumeRemoteNode(const BarnesNodeData &n, const BarnesKey &key) {
       remoteCounter--;
-      cons->consumeLocalNode(n, key); //Call consumer's node method now that remote node is available
+      cons->consumeNode(n, key); //Call consumer's node method now that remote node is available
       checkDone();
     }
 
     /// Entry method called to respond to a remote node request which is a leaf node
     void consumeRemoteLeaf(const BarnesLeafData &n, const BarnesKey &key) {
       remoteCounter--;
-      cons->consumeLocalLeaf(n, key); //Call consumer's leaf method now that remote leaf is available
+      cons->consumeLeaf(n, key); //Call consumer's leaf method now that remote leaf is available
       checkDone();
     }
 };

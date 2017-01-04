@@ -9,20 +9,11 @@
 #define DEBUG(x) x
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <cmath>
 #include <iostream>
 using namespace std;
 #include "../barnes1d.h"
-
-
-/**
-Key to identifiy a node : index in the array
-*/
-typedef unsigned long BarnesKey;
-template <class ParaTree>
-BarnesKey leftChild(ParaTree &t,BarnesKey parent) { return parent*2+0; }
-template <class ParaTree>
-BarnesKey rightChild(ParaTree &t,BarnesKey parent) { return parent*2+1; }
 
 /*
 Barnes Hut Tree : Stores nodes in a dense array
@@ -41,14 +32,20 @@ class BarnesParaTree{
 
 	//Process node requests and send back nodes/leaves
 	template <class Consumer>
-	void requestNode(BarnesKey bk, Consumer &c){
+	void requestKey(BarnesKey bk, Consumer &c){
 		if(bk<1 || bk>= size) printf("BarnesParaTree: Requested INVALID tree node %d\n", (int)bk);
 		else{
 			if(bk>=firstLeaf)
-				c.consumeLocalLeaf(node[bk],bk);
+				c.consumeLeaf(node[bk],bk);
 			else
-				c.consumeLocalNode(node[bk],bk);
+				c.consumeNode(node[bk],bk);
 		}
+	}
+
+	template <class Consumer>
+	void requestChildren(BarnesKey bk, Consumer &c){
+		requestKey(leftChild(*this,bk),c);
+		requestKey(rightChild(*this,bk),c);
 	}
 
   /// Recursively construct tree

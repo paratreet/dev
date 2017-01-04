@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
 		//check if the node is a leaf
 		if(i>=pow(2,depth)){
 			BarnesConsumer<typeof(t),BarnesKey> c(t, t.node[i]);
-			t.requestNode(treeRoot, c);
+			t.requestKey(treeRoot, c);
 			cout<<"Particle "<<i<<" has an acceleration of "<<c.acc<<endl;
 		}
 	}

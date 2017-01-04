@@ -7,12 +7,6 @@
 #include "barnes1d.h"
 
 
-typedef unsigned long BarnesKey;
-template <class ParaTree>
-CUDA_BOTH BarnesKey leftChild(const ParaTree &t,BarnesKey parent) { return parent*2+0; }
-template <class ParaTree>
-CUDA_BOTH BarnesKey rightChild(const ParaTree &t,BarnesKey parent) { return parent*2+1; }
-
 /**
  Store tree nodes in a dense array.
  */
@@ -21,21 +15,27 @@ public:
 	const BarnesNodeData *n;
 	BarnesKey firstLeaf, nTreeNodes;
 	
-	CUDA_BOTH BarnesParaTree(const BarnesNodeData *n,BarnesKey firstLeaf,BarnesKey nTreeNodes) 
-		:n(n), firstLeaf(firstLeaf), nTreeNodes(nTreeNodes) 
+	CUDA_BOTH BarnesParaTree(const BarnesNodeData *n,BarnesKey firstLeaf,BarnesKey nTreeNodes)
+		:n(n), firstLeaf(firstLeaf), nTreeNodes(nTreeNodes)
 	{}
 	
 	template <class Consumer>
-	inline CUDA_BOTH void requestNode(const BarnesKey &bk,Consumer &c) {
+	inline CUDA_BOTH void requestKey(const BarnesKey &bk,Consumer &c) {
 #if SANITY_CHECKS
 		// Sanity checks:
 		if (bk<1 || bk>=nTreeNodes) printf("BarnesParaTree: Requested INVALID tree node %d\n",(int)bk);
-		else 
+		else
 #endif
-		  if (bk>=firstLeaf) 
-			c.consumeLocalLeaf(n[bk],bk); // HACK!  typecast node to leaf (could save space with dedicated leaf array)
-		else 
-			c.consumeLocalNode(n[bk],bk);
+		  if (bk>=firstLeaf)
+			c.consumeLeaf(n[bk],bk); // HACK!  typecast node to leaf (could save space with dedicated leaf array)
+		else
+			c.consumeNode(n[bk],bk);
+	}
+
+	template <class Consumer>
+	inline CUDA_BOTH void requestChildren(const BarnesKey &bk,Consumer &c) {
+		requestKey(leftChild(*this,bk),c);
+		requestKey(rightChild(*this,bk),c);
 	}
 };
 
@@ -65,8 +65,15 @@ public:
 	
 	// To request a node, just push to the stack
 	template <class Consumer>
-	CUDA_BOTH void requestNode(const Key &key, Consumer &consumer) {
+	CUDA_BOTH void requestKey(const Key &key, Consumer &consumer) {
 		stackPush(key);
+	}
+
+	// To request a node's children, just push them both to the stack
+	template <class Consumer>
+	CUDA_BOTH void requestChildren(const Key &key, Consumer &consumer) {
+		stackPush(leftChild(*this,key));
+		stackPush(rightChild(*this,key));
 	}
 	
 	// To finish servicing a consumer, keep popping nodes
@@ -75,7 +82,7 @@ public:
 		while (!stackEmpty()) {
 			TRACE_STACK(printf("		Stack depth %d: %ld top\n",stackTop,stack[stackTop]));
 			Key k=stackPop(); // dereference key (subtle: stack can change as we process this key)
-			untertree.requestNode(k,consumer);
+			untertree.requestKey(k,consumer);
 		}
 	}
 };

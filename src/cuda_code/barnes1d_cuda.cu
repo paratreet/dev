@@ -21,7 +21,7 @@ __global__ void tryTraverse(const BarnesNodeData *treeNodes,int firstLeaf,int nT
 		BarnesConsumer<typeof(tree),BarnesKey> c(tree,treeNodes[i]);
 		
 		// Expand the tree root into the consumer
-		tree.requestNode(treeRoot,c);
+		tree.requestKey(treeRoot,c);
 
 #ifndef CUDA_USE_RECURSION	
 		tree.iterateToConsumer(c);

@@ -28,45 +28,35 @@
 namespace ParaTreeT {
 
 /**
- The idiomatic definition of the read side of a ParaTree: 
- basically just provides an interface for Consumers to request data. 
+ The idiomatic definition of the read side of a ParaTree:
+ basically just provides an interface for Consumers to request data.
 */
 template <class Key,class NodeData,class LeafData>
 class ExampleParaTree {
 public:
-	/// This is how consumers request data from the tree.
+	/// This consumer requests the node/leaf data at this key
 	template <class Consumer>
-	void requestNode(const Key &key, Consumer &consumer);
+	void requestKey(const Key &key, Consumer &consumer);
+
+	/// This consumer requests the subkeys of this key
+	template <class Consumer>
+	void requestChildren(const Key &key, Consumer &consumer);
 };
 
 /**
  A Consumer receives parts of a tree and performs some computation on them.
  ParaTrees are templated on the consumer.
- 
+
  Due to the magic of templates, probably nobody needs to actually use this class,
  but it's an example of what the Consumer interface provides.
 */
-template <class Key, class NodeData, class LeafData, class ParaTree>
+template <class Key, class NodeData, class LeafData>
 class ExampleConsumer {
 public:
-	/// Consume a local tree node.  We pass the key of this node, and the tree itself, just in case you need them.
-	inline void consumeLocalNode(NodeData &n,const Key &key) { /* do node physics here */ }
-	/// Consume a local tree leaf
-	inline void consumeLocalLeaf(LeafData &l,const Key &key) { /* do leaf physics here */ }
-	
-	/// Consume remote tree node, arriving from another processor (after a delay)
-	///  By default, just treats this like local data
-	inline void consumeRemoteNode(NodeData &n,const Key &key) { consumeLocalNode(n,key); }
-	/// Consume remote tree node, arriving from another processor (after a delay)
-	///  By default, just treats this like local data
-	inline void consumeRemoteLeaf(LeafData &l,const Key &key) { consumeLocalLeaf(l,key); }
-	
-	/// Notification: you have received all local data.
-	///   By default, does nothing.
-	inline void consumedAllLocal(void) {}
-	/// Notification: you have received all remote data (and hence all data)
-	///   By default, does nothing.
-	inline void consumedAllRemote(void) {}
+	/// Consume a tree node.  We pass the key of this node, just in case you need it.
+	inline void consumeNode(NodeData &n,const Key &key) { /* do node physics here */ }
+	/// Consume a tree leaf
+	inline void consumeLeaf(LeafData &l,const Key &key) { /* do leaf physics here */ }
 };
 
 };
