@@ -1,6 +1,6 @@
 SRC_FILES=barnes1d.cpp
 OPTS=-O3 -g
-INC=-I..
+INC=-I ../ -I ../../
 BUILD_OPTS = -c -std=c++11 $(OPTS) $(INC)
 CHARM_OPTS =
 TEST_OPTS = ++local

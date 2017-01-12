@@ -3,18 +3,19 @@
 #include <stdlib.h>
 #include <cmath>
 using namespace std;
-#include "../barnes1d.h"
+#include "barnes3d.h"
 #include "barnes.decl.h"
 
 /// Define DEBUG(x) to x if you need to print out a lot of statements
-#define DEBUG(x)
+#define DEBUG(x) //x
+#define MYDEBUG(x) x
 
 /* readonly */ CProxy_Main mainProxy;
 /* readonly */ CProxy_BarnesTreePiece tpProxy;
 
 /**
-Trivial Barnes Tree piece
-Each Treepiece stores a single tree node (either internal node or leaf)
+ * Trivial Barnes TreePiece.
+ * Each TreePiece stores a single tree node (either internal node or leaf).
 */
 class BarnesTreePiece : public CBase_BarnesTreePiece {
   public:
@@ -44,7 +45,7 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
       if (remoteCounter == 0) {
         DEBUG(CkPrintf("[%d]remoteCounter == 0\n", thisIndex);)
         if (thisIndex >= firstLeaf){
-          CkPrintf("[%d] Acceleration of particle : %f\n", thisIndex, cons->acc);
+          MYDEBUG(CkPrintf("[%d] Acceleration of particle : %f\n", thisIndex, cons->acc);)
         }
         contribute(CkCallback(CkReductionTarget(Main, done), mainProxy));
       }
@@ -81,8 +82,9 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
 
     template <class Consumer>
     void requestChildren(const BarnesKey &bk, Consumer &c) {
-      requestKey(leftChild(*this,bk),c);
-      requestKey(rightChild(*this,bk),c);
+      for (int i = 0; i < 8; i++) {
+        requestKey(getChild(*this, bk, i), c);
+      }
     }
 
     /// Entry method called to request for a remote node
@@ -108,19 +110,30 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
     }
 };
 
+/*
+ * Main
+ */
 class Main : public CBase_Main {
   public:
     BarnesNodeData *tree;
-    BarnesKey treeSize, treeRoot, firstLeaf;
+    BarnesKey treeSize; // total number of nodes
+    BarnesKey treeRoot, firstLeaf;
+    double startTime;
 
   Main(CkArgMsg *m) {
-    int depth = 10; // Number of levels in Barnes-Hut  tree
-    treeSize = (BarnesKey)pow(2, depth);
+    int depth = 3; // depth of tree
+    if (m->argc == 2) {
+      depth = atoi(m->argv[1]);
+    }
+      
+    treeSize = (BarnesKey)((int)pow(8, depth)/7 + 1);
     treeRoot = 1;
-    firstLeaf = pow(2, depth-1);
+    firstLeaf = (int)pow(8, depth)/56 + 1;
 
     tree = new BarnesNodeData[treeSize];
-    constructNode(treeRoot, 0.0, 100.0);
+    vector3d min = {0.0, 0.0, 0.0};
+    vector3d max = {100.0, 100.0, 100.0};
+    constructNode(treeRoot, min, max);
 
     mainProxy = thisProxy;
     tpProxy = CProxy_BarnesTreePiece::ckNew();
@@ -133,6 +146,7 @@ class Main : public CBase_Main {
     tpProxy.doneInserting();
     CkPrintf("[Main] Create tree-piece array\n");
 
+    startTime = CkWallTimer();
     tpProxy.startWork();
   }
 
@@ -140,29 +154,42 @@ class Main : public CBase_Main {
 
   /// Method called on reduction to indicate end of compuatations
   void done() {
-    CkPrintf("[Main] Done with 1D Barnes-Hut computations\n");
+    CkPrintf("[Main] Elapsed time: %lf\n", CkWallTimer() - startTime);
+    CkPrintf("[Main] Done with 3D Barnes-Hut computations\n");
     CkExit();
   }
 
+  bool isLeaf(int index) {
+    return (index >= firstLeaf);
+  }
+  
+
   /// Construct the tree in an array form recursively
-  void constructNode(int index, float xMin, float xMax) {
+  void constructNode(int index, vector3d min, vector3d max) {
     // Interior node
-    if (2*index<treeSize) {
-      float xMid = (xMin+xMax)/2;
-      tree[index] = BarnesNodeData(20.0, xMid, xMin, xMax);
+    if (!isLeaf(index)) {
+      vector3d mid = (min+max)/2;
+      tree[index] = BarnesNodeData(20.0, mid, min, max);
 
-      // Construct left child node
-      constructNode(2*index, xMin, xMid);
+      constructNode(getChild(index, 0), vector3d(min.x,min.y,min.z), vector3d(mid.x,mid.y,mid.z));
+      constructNode(getChild(index, 1), vector3d(mid.x,min.y,min.z), vector3d(max.x,mid.y,mid.z));
+      constructNode(getChild(index, 2), vector3d(min.x,mid.y,min.z), vector3d(mid.x,max.y,mid.z));
+      constructNode(getChild(index, 3), vector3d(mid.x,mid.y,min.z), vector3d(max.x,max.y,mid.z));
 
-      // Construct right child node
-      constructNode(2*index+1, xMid, xMax);
+      constructNode(getChild(index, 4), vector3d(min.x,min.y,mid.z), vector3d(mid.x,mid.y,max.z));
+      constructNode(getChild(index, 5), vector3d(mid.x,min.y,mid.z), vector3d(max.x,mid.y,max.z));
+      constructNode(getChild(index, 6), vector3d(min.x,mid.y,mid.z), vector3d(mid.x,max.y,max.z));
+      constructNode(getChild(index, 7), vector3d(mid.x,mid.y,mid.z), vector3d(max.x,max.y,max.z));
+
     }
     // Leaf node
     else {
       float random = ((float) rand()) / (float) RAND_MAX;
-      float xPos= xMin + random*(xMax - xMin);
+      vector3d pos = min + (max - min)*random;
+      DEBUG(printf("[%d] Particle created : (%6.2f, %6.2f, %6.2f)\n",
+          index, pos.x, pos.y, pos.z);)
 
-      tree[index] = BarnesNodeData(20.0, xPos, xMin, xMax);
+      tree[index] = BarnesNodeData(20.0, pos, min, max);
     }
   }
 };
