@@ -24,13 +24,13 @@ class BarnesParaTree{
 	int size;
 	BarnesKey firstLeaf;
 	BarnesNodeData *tree;
-	BarnesParaTree(int depth): depth(depth){
-		size = (BarnesKey)((int)pow(8, depth)/7 + 1);
+	BarnesParaTree(int depth) : depth(depth){
+		size = (int)pow(8, depth)/7 + 1;
 		tree = (BarnesNodeData*)malloc(sizeof(BarnesNodeData)*size);
-		firstLeaf = (int)pow(8, depth)/56 + 1;
+		firstLeaf = (BarnesKey)((int)pow(8, depth)/56 + 1);
   }
 
-  bool isLeaf(int index) {
+  inline bool isLeaf(int index) {
     return (index >= firstLeaf);
   }
 
