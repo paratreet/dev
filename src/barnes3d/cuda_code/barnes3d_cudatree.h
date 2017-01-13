@@ -48,20 +48,23 @@ template <class Key, class UnterTree>
 class ManualStackTree {
 public:
 	UnterTree &untertree;
+  int maxDepth;
 	
-	Key stack[10]; // FIXME: stack size is equal to the number of leaves, which can be large for deep trees
+	Key stack[1000]; // FIXME: stack overflow? theoretical limit is equal to the number of leaves, but in practice it's a lot smaller because of the opening criteria
 	int stackTop;
-	CUDA_BOTH bool stackEmpty(void) { return stackTop<0; }
+	CUDA_BOTH bool stackEmpty(void) { return stackTop < 0; }
 	CUDA_BOTH void stackPush(const Key &b) {
 		stackTop++;
-		stack[stackTop]=b;
-		TRACE_STACK(printf("		Stack pushing to depth %d: %ld new top\n",stackTop,stack[stackTop]));
+    if (stackTop > maxDepth)
+      maxDepth = stackTop;
+		stack[stackTop] = b;
+		TRACE_STACK(printf("[stack] pushing %ld to depth %d\n", stack[stackTop], stackTop));
 	}
 	CUDA_BOTH const Key &stackPop(void) {
 		return stack[stackTop--];
 	}
 
-	CUDA_BOTH ManualStackTree(UnterTree &untertree) :untertree(untertree), stackTop(-1) {}
+	CUDA_BOTH ManualStackTree(UnterTree &untertree) : untertree(untertree), stackTop(-1), maxDepth(-1) {}
 	
 	// To request a node, just push to the stack
 	template <class Consumer>
@@ -69,7 +72,7 @@ public:
 		stackPush(key);
 	}
 
-	// To request a node's children, just push them both to the stack
+	// To request a node's children, just push them all to the stack
 	template <class Consumer>
 	CUDA_BOTH void requestChildren(const Key &key, Consumer &consumer) {
     for (int i = 0; i < 8; i++) {
@@ -81,8 +84,8 @@ public:
 	template <class Consumer>
 	CUDA_BOTH void iterateToConsumer(Consumer &consumer) {
 		while (!stackEmpty()) {
-			TRACE_STACK(printf("		Stack depth %d: %ld top\n",stackTop,stack[stackTop]));
-			Key k=stackPop(); // dereference key (subtle: stack can change as we process this key)
+			TRACE_STACK(printf("[stack] popping %ld from depth %d\n", stack[stackTop], stackTop));
+			Key k = stackPop(); // dereference key (subtle: stack can change as we process this key)
 			untertree.requestKey(k,consumer);
 		}
 	}

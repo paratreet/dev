@@ -1,4 +1,4 @@
-OPTS=-O3 -g
+OPTS=-O3 -g -std=c++11
 INC=-I.. -I../..
 PROGRAMS=barnes3d_cuda
 
