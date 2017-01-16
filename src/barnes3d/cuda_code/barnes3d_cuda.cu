@@ -143,6 +143,6 @@ int main(int argc, char** argv) {
   free(h_nodes);
   free(h_acc);
 
-  // End timing
+  // Print time
   std::cout << "Execution time: " << t_diff << " ms" << std::endl;
 }

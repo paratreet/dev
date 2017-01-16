@@ -6,7 +6,7 @@
 #define __PARATREET_BARNES3D_CPUTREES
 
 /// Set to print out DEBUG statements
-#define DEBUG(x) x
+#define DEBUG(x)
 
 #include <stdio.h>
 #include <stdlib.h>

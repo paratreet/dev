@@ -1,4 +1,4 @@
-OPTS=-O3 -g #-U__CHARMC__
+OPTS=-O3 -g -std=c++11 #-U__CHARMC__
 INC=-I../ -I../../
 
 all: barnes3d

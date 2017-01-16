@@ -8,7 +8,7 @@ using namespace std;
 
 /// Define DEBUG(x) to x if you need to print out a lot of statements
 #define DEBUG(x) //x
-#define MYDEBUG(x) x
+#define MYDEBUG(x) //x
 
 /* readonly */ CProxy_Main mainProxy;
 /* readonly */ CProxy_BarnesTreePiece tpProxy;
@@ -125,7 +125,7 @@ class Main : public CBase_Main {
     if (m->argc == 2) {
       depth = atoi(m->argv[1]);
     }
-      
+
     treeSize = (BarnesKey)((int)pow(8, depth)/7 + 1);
     treeRoot = 1;
     firstLeaf = (int)pow(8, depth)/56 + 1;
