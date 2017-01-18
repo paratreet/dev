@@ -30,7 +30,7 @@ class FMMParaTree{
 		firstLeaf = pow(2, depth);
 	}
 
-        bool isLeaf(FMMNodeData &qnode) {
+        bool isLeaf(const FMMNodeData &qnode) const {
             return (&qnode - node) >= firstLeaf;
             }
         

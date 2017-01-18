@@ -77,10 +77,10 @@ template <class ParaTree,class FMMKey>
 struct FMMConsumer {
 public:
 	ParaTree &tree;
-	const FMMNodeData &me;
+	FMMNodeData &me;
 	float acc;
 
-	CUDA_BOTH FMMConsumer(ParaTree &tree,const FMMNodeData &me) 
+	CUDA_BOTH FMMConsumer(ParaTree &tree,FMMNodeData &me) 
 		:tree(tree), me(me) 
 	{
 		acc=0.0f;
