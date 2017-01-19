@@ -1,6 +1,6 @@
-mainmodule barnes {
+mainmodule ball {
   readonly CProxy_Main mainProxy;
-  readonly CProxy_BarnesTreePiece tpProxy;
+  readonly CProxy_BallTreePiece tpProxy;
 
   mainchare Main {
     entry Main(CkArgMsg *m);
@@ -11,15 +11,15 @@ mainmodule barnes {
   Chare array representing tree pieces.
   Each tree piece has one unique tree node.
   */ 
-  array [1D] BarnesTreePiece {
-    entry BarnesTreePiece(BarnesNodeData, BarnesKey, BarnesKey);
+  array [1D] BallTreePiece {
+    entry BallTreePiece(BallNodeData, BallKey, BallKey);
     entry void startWork();
     /// Response to a consumer requesting a remote tree node
-    entry void consumeRemoteNode(const BarnesNodeData &n, const BarnesKey &key);
+    entry void consumeRemoteNode(const BallNodeData &n, const BallKey &key);
     /// Response to a consumer requesting a remote tree leaf
-    entry void consumeRemoteLeaf(const BarnesLeafData &n, const BarnesKey &key);
+    entry void consumeRemoteLeaf(const BallLeafData &n, const BallKey &key);
     /// Request appropriate tree piece for a remote node or leaf
     /// Invoked by consumer in a tree piece
-    entry void requestRemoteNode(BarnesKey, int);
+    entry void requestRemoteNode(BallKey, int);
   }
 };

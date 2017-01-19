@@ -2,41 +2,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <cmath>
+#include <iostream>
 using namespace std;
-#include "barnes1d.h"
-#include "barnes.decl.h"
+#include "ball1d.h"
+#include "ball.decl.h"
 
 /// Define DEBUG(x) to x if you need to print out a lot of statements
 #define DEBUG(x)
 
 /* readonly */ CProxy_Main mainProxy;
-/* readonly */ CProxy_BarnesTreePiece tpProxy;
+/* readonly */ CProxy_BallTreePiece tpProxy;
 
 /**
-Trivial Barnes Tree piece
+Trivial Ball Tree piece
 Each Treepiece stores a single tree node (either internal node or leaf)
 */
-class BarnesTreePiece : public CBase_BarnesTreePiece {
+class BallTreePiece : public CBase_BallTreePiece {
   public:
     /// Tree node (1 node for 1 tree piece)
-    BarnesNodeData node;
+    BallNodeData node;
 
     /// Consumer (only initialized for a leaf)
-    BarnesConsumer<BarnesTreePiece, BarnesKey> *cons;
+    BallConsumer<BallTreePiece, BallKey> *cons;
 
     /// Index of the first leaf
-    BarnesKey firstLeaf;
+    BallKey firstLeaf;
 
     /// Size of the tree
-    BarnesKey treeSize;
+    BallKey treeSize;
 
     /// Counter to keep a track of number of remote node requests sent
     int remoteCounter = 0;
 
-    BarnesTreePiece(BarnesNodeData tpnode, BarnesKey firstLeaf, BarnesKey treeSize) : node(tpnode), firstLeaf(firstLeaf), treeSize(treeSize) {
+    BallTreePiece(BallNodeData tpnode, BallKey firstLeaf, BallKey treeSize) : node(tpnode), firstLeaf(firstLeaf), treeSize(treeSize) {
       /// Create a constructor only if the node is a leaf
       if (thisIndex >= firstLeaf)
-        cons = new BarnesConsumer<BarnesTreePiece, BarnesKey>(*this, node);
+        cons = new BallConsumer<BallTreePiece, BallKey>(*this, node);
     }
 
     /// Check if all remote requests have completed
@@ -44,7 +45,10 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
       if (remoteCounter == 0) {
         DEBUG(CkPrintf("[%d]remoteCounter == 0\n", thisIndex);)
         if (thisIndex >= firstLeaf){
-          CkPrintf("[%d] Acceleration of particle : %f\n", thisIndex, cons->acc);
+          cout << "Particle " << thisIndex << " has neighbors:";
+          for (int i = 0; i < cons->neighbors.size(); i++)
+          cout << " " << cons->neighbors[i];
+          cout << endl;
         }
         contribute(CkCallback(CkReductionTarget(Main, done), mainProxy));
       }
@@ -59,13 +63,13 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
       checkDone();
     }
 
-    BarnesTreePiece(CkMigrateMessage *m) {}
+    BallTreePiece(CkMigrateMessage *m) {}
 
     /// Method called to request a node
     template <class Consumer>
-    void requestKey(const BarnesKey &bk, Consumer &c) {
+    void requestKey(const BallKey &bk, Consumer &c) {
       if (bk < 1 || bk >= treeSize)
-        CkPrintf("BarnesParaTree: Requested INVALID tree node %d\n", (int)bk);
+        CkPrintf("BallParaTree: Requested INVALID tree node %d\n", (int)bk);
       else if (bk == thisIndex) {   //Local node
         if (bk >= firstLeaf)
           c.consumeLeaf(node, bk);  //Call consumer's leaf method
@@ -80,13 +84,13 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
     }
 
     template <class Consumer>
-    void requestChildren(const BarnesKey &bk, Consumer &c) {
+    void requestChildren(const BallKey &bk, Consumer &c) {
       requestKey(leftChild(*this,bk),c);
       requestKey(rightChild(*this,bk),c);
     }
 
     /// Entry method called to request for a remote node
-    void requestRemoteNode(BarnesKey bk, int consIndex) {
+    void requestRemoteNode(BallKey bk, int consIndex) {
       if (bk >= firstLeaf)
         thisProxy[consIndex].consumeRemoteLeaf(node, bk);
       else
@@ -94,14 +98,14 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
     }
 
     /// Entry method called to respond to a remote node request which is an internal node
-    void consumeRemoteNode(const BarnesNodeData &n, const BarnesKey &key) {
+    void consumeRemoteNode(const BallNodeData &n, const BallKey &key) {
       remoteCounter--;
       cons->consumeNode(n, key); //Call consumer's node method now that remote node is available
       checkDone();
     }
 
     /// Entry method called to respond to a remote node request which is a leaf node
-    void consumeRemoteLeaf(const BarnesLeafData &n, const BarnesKey &key) {
+    void consumeRemoteLeaf(const BallLeafData &n, const BallKey &key) {
       remoteCounter--;
       cons->consumeLeaf(n, key); //Call consumer's leaf method now that remote leaf is available
       checkDone();
@@ -110,20 +114,23 @@ class BarnesTreePiece : public CBase_BarnesTreePiece {
 
 class Main : public CBase_Main {
   public:
-    BarnesNodeData *tree;
-    BarnesKey treeSize, treeRoot, firstLeaf;
+    BallNodeData *tree;
+    BallKey treeSize, treeRoot, firstLeaf;
 
   Main(CkArgMsg *m) {
-    int depth = 10; // Number of levels in Barnes-Hut  tree
-    treeSize = (BarnesKey)pow(2, depth);
+    int depth = 3;
+    if (m->argc == 2) {
+      depth = atoi(m->argv[1]);
+    }
+    treeSize = (BallKey)pow(2, depth);
     treeRoot = 1;
     firstLeaf = pow(2, depth-1);
 
-    tree = new BarnesNodeData[treeSize];
+    tree = new BallNodeData[treeSize];
     constructNode(treeRoot, 0.0, 100.0);
 
     mainProxy = thisProxy;
-    tpProxy = CProxy_BarnesTreePiece::ckNew();
+    tpProxy = CProxy_BallTreePiece::ckNew();
 
     // Dynamic insertion of treepieces
     for (int i = 1; i < treeSize; i++) {
@@ -140,7 +147,7 @@ class Main : public CBase_Main {
 
   /// Method called on reduction to indicate end of compuatations
   void done() {
-    CkPrintf("[Main] Done with 1D Barnes-Hut computations\n");
+    CkPrintf("[Main] Done with 1D Ball-Search computations\n");
     CkExit();
   }
 
@@ -148,8 +155,9 @@ class Main : public CBase_Main {
   void constructNode(int index, float xMin, float xMax) {
     // Interior node
     if (2*index<treeSize) {
+			cout<<"Tree Node: Ind:"<<index<<" xMin:"<<xMin<<" xMax:"<<xMax<<endl;
       float xMid = (xMin+xMax)/2;
-      tree[index] = BarnesNodeData(20.0, xMid, xMin, xMax);
+      tree[index] = BallNodeData(20.0, xMid, 0.0f, xMin, xMax);
 
       // Construct left child node
       constructNode(2*index, xMin, xMid);
@@ -162,9 +170,10 @@ class Main : public CBase_Main {
       float random = ((float) rand()) / (float) RAND_MAX;
       float xPos= xMin + random*(xMax - xMin);
 
-      tree[index] = BarnesNodeData(20.0, xPos, xMin, xMax);
+			cout<<"Tree Leaf: Ind:"<<index<<" xPos:"<<xPos<<endl;
+      tree[index] = BallNodeData(20.0, xPos, 25.0f, xMin, xMax);
     }
   }
 };
 
-#include "barnes.def.h"
+#include "ball.def.h"
