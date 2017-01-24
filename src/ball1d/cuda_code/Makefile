@@ -1,10 +1,10 @@
-OPTS=-O3 -g
-INC=-I..
-PROGRAMS=barnes1d_cuda
+OPTS=-O3 -g -std=c++11
+INC=-I.. -I../..
+PROGRAMS=ball1d_cuda
 
 all: $(PROGRAMS)
 
-barnes1d_cuda: barnes1d_cuda.cu *.h
+ball1d_cuda: ball1d_cuda.cu *.h
 	nvcc $< -o $@ $(OPTS) $(INC) --gpu-architecture sm_30
 
 clean:
