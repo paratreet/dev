@@ -5,7 +5,7 @@ which includes experimental and unfinished code.
 
 ## Library Overview
 
-There are currently only two key abstractions in the ParaTreeT library:
+These are the key abstractions in the ParaTreeT library:
 
 - A ParaTree provides access to tree data upon request.
     - A pointer-based ParaTree could store pointers to children in each tree node.
@@ -17,6 +17,8 @@ There are currently only two key abstractions in the ParaTreeT library:
     - A Barnes-Hut consumer could walk the tree to compute gravity at one location.
     - A smoothed-particle hydrodynamics consumer could walk the tree to find its k nearest neighboring particles.
     - A raytracer consumer could walk the tree to find a ray-object intersection.
+
+
 
 In general, the ParaTree's requestKey<Consumer> method 
 delivers tree node and leaf data to a Consumer by calling the 
@@ -55,7 +57,7 @@ free the consumer from the need to count outstanding network requests.
      src="docs/img/paratreet_remote.png"    width=470px>
 </p>
 
-## Call signatures and contracts
+## Detailed call signatures and contracts
 
 ```ParaTree::requestKey<Consumer>(const Key &key,Consumer &c)```
 
@@ -63,6 +65,15 @@ The ParaTree MUST eventually deliver the tree node or leaf data
 associated with this key to this consumer.
 
 The key MUST identify a valid tree node or leaf.
+
+```ParaTree::requestChildren<Consumer>(const Key &key,Consumer &c)```
+
+The key MUST identify a valid tree node or leaf.
+
+If the key identifies an internal node of the tree, this is 
+equivalent to calling requestKey on each of the children of this node.
+If the key identifies a leaf, this is equivalent to calling
+requestKey(key).
 
 
 ```Consumer::consumeNode(const NodeData &data,const Key &key)```
@@ -77,14 +88,6 @@ The Consumer MAY make more tree requests in either call.
 The Consumer MUST NOT assume their requests will be satisfied in
 any particular order--trees are allowed to reorder requests.
 
-
-Proposed call:
-```ParaTree::requestChildren<Consumer>(const Key &key,Consumer &c)```
-
-If the key identifies an internal node of the tree, this is 
-equivalent to calling requestKey on each of the children of this node.
-If the key identifies a leaf, this is equivalent to calling
-requestKey(key).
 
 
 ## Benefits
